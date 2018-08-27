@@ -60663,9 +60663,7 @@ exports.Parent = Parent;
 
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(/*! babel-polyfill */ "./node_modules/babel-polyfill/lib/index.js");
-// import * as React from "react";
-// import * as ReactDOM from "react-dom";
+//import 'babel-polyfill';
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var Parent_1 = __webpack_require__(/*! ./components/Parent */ "./src/components/Parent.tsx");
