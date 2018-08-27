@@ -3,8 +3,8 @@ import { Stage, Layer} from 'react-konva';
 import * as Konva from 'konva';
 
 interface IChildProps { 
-    image: HTMLImageElement; 
-    blurred: boolean; 
+    image: HTMLImageElement;
+    blurred: boolean;
 }
 
 export class Child extends React.Component<IChildProps, {}> {
@@ -16,6 +16,7 @@ export class Child extends React.Component<IChildProps, {}> {
         this.konvaStage = React.createRef();
         this.konvaLayer = React.createRef();
         
+        
     }
         
     componentDidMount() {
@@ -25,15 +26,17 @@ export class Child extends React.Component<IChildProps, {}> {
           height: 250
         });
         let st: Konva.Stage = this.konvaLayer.current.getStage();
-        
-        if (this.props.blurred) {
-          img.filters([Konva.Filters.Blur]);
-          img.blurRadius(30);
-          img.cache({ width: this.konvaLayer.current.getWidth(), height: this.konvaLayer.current.getHeight() });
-        }
-        
+
+        this.props.image.onload = () => {
+            if (this.props.blurred) {
+              img.filters([Konva.Filters.Blur]);
+              img.blurRadius(30);
+              img.cache({ width: this.konvaLayer.current.getWidth(), height: this.konvaLayer.current.getHeight() });
+            }
+            this.konvaLayer.current.draw();
+          }      
         this.konvaLayer.current.add(img);
-        st.draw();
+        this.konvaLayer.current.draw();
         }
 
     render() {

@@ -4,25 +4,33 @@
   "description": "Konva image draw with filter issue",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode development"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/react": "^16.4.11",
     "@types/react-dom": "^16.0.7",
+    "babel-polyfill": "^6.26.0",
     "konva": "^2.2.2",
+    "object-assign": "^4.1.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-konva": "^1.7.14"
   },
   "devDependencies": {
-    "awesome-typescript-loader": "^5.2.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "source-map-loader": "^0.2.4",
+    "ts-loader": "^4.5.0",
     "typescript": "^2.9.2",
     "url-loader": "^1.1.1",
     "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0",
-    "webpack-command": "^0.4.1"
+    "webpack-cli": "^3.1.0"
   }
 }
